@@ -17,7 +17,7 @@ spec:
         image: testaut.azurecr.io/springboot:prd
         imagePullPolicy: Always
         ports:
-        - containerPort: 8085
+        - containerPort: 8080
 # service type loadbalancer       
 ---
 apiVersion: v1
@@ -32,7 +32,7 @@ spec:
   - name: http
     port: 80
     protocol: TCP
-    targetPort: 8085
+    targetPort: 8080
   type: ClusterIP
   selector:
     app: springboot-app
